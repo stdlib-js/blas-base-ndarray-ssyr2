@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Performs the symmetric rank 2 operation `A = alpha*x*y^T + alpha*y*x^T + A`.
+> Perform the symmetric rank 2 operation `A = alpha*x*y^T + alpha*y*x^T + A`.
 
 <section class="intro">
 
