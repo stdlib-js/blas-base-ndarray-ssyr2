@@ -48,6 +48,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import ssyr2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-ssyr2@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-base-ndarray-ssyr2/tags). For example,
+
+```javascript
 import ssyr2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-ssyr2@v0.0.0-deno/mod.js';
 ```
 
@@ -113,7 +118,7 @@ import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@deno/mod.
 import resolveEnum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-matrix-triangle-resolve-enum@deno/mod.js';
 import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@deno/mod.js';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import ssyr2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-ssyr2@v0.0.0-deno/mod.js';
+import ssyr2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-ndarray-ssyr2@deno/mod.js';
 
 var opts = {
     'dtype': 'float32'
