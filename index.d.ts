@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,20 +16,11 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-var numelDimension = require( '@stdlib/ndarray-base-numel-dimension' );
-var getStrides = require( '@stdlib/ndarray-base-strides' );
-var getStride = require( '@stdlib/ndarray-base-stride' );
-var getOffset = require( '@stdlib/ndarray-base-offset' );
-var getData = require( '@stdlib/ndarray-base-data-buffer' );
-var ndarraylike2scalar = require( '@stdlib/ndarray-base-ndarraylike2scalar' );
-var strided = require( '@stdlib/blas-base-ssyr2' ).ndarray;
-
-
-// MAIN //
+import { float32ndarray, ndarray } from '@stdlib/types/ndarray';
 
 /**
 * Performs the symmetric rank 2 operation `A = alpha*x*y^T + alpha*y*x^T + A`, where `alpha` is a scalar, `x` and `y` are one-dimensional ndarrays, and `A` is an `N` by `N` symmetric matrix.
@@ -44,8 +35,8 @@ var strided = require( '@stdlib/blas-base-ssyr2' ).ndarray;
 *     -   a zero-dimensional ndarray specifying whether the upper or lower triangular part of the symmetric matrix `A` should be referenced.
 *     -   a zero-dimensional ndarray containing a scalar constant corresponding to `alpha`.
 *
-* @param {ArrayLikeObject<Object>} arrays - array-like object containing ndarrays
-* @returns {Object} output ndarray
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float32Matrix = require( '@stdlib/ndarray-matrix-float32' );
@@ -70,29 +61,9 @@ var strided = require( '@stdlib/blas-base-ssyr2' ).ndarray;
 * var bool = ( z === A );
 * // returns true
 */
-function ssyr2( arrays ) {
-	var alpha;
-	var uplo;
-	var st;
-	var A;
-	var x;
-	var y;
-
-	x = arrays[ 0 ];
-	y = arrays[ 1 ];
-	A = arrays[ 2 ];
-
-	uplo = ndarraylike2scalar( arrays[ 3 ] );
-	alpha = ndarraylike2scalar( arrays[ 4 ] );
-
-	st = getStrides( A, false );
-
-	strided( uplo, numelDimension( A, 0 ), alpha, getData( x ), getStride( x, 0 ), getOffset( x ), getData( y ), getStride( y, 0 ), getOffset( y ), getData( A ), st[ 0 ], st[ 1 ], getOffset( A ) ); // eslint-disable-line max-len
-
-	return A;
-}
+declare function ssyr2( arrays: [ float32ndarray, float32ndarray, float32ndarray, ndarray, float32ndarray ] ): float32ndarray;
 
 
 // EXPORTS //
 
-module.exports = ssyr2;
+export = ssyr2;
